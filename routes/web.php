@@ -1,7 +1,11 @@
 <?php
 
+use App\Livewire\Course\Show;
+use App\Livewire\Pages\Welcome;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+Route::get('/', Welcome::class);
+
+Route::prefix('course')->name('course.')->group(function () {
+    Route::get('{slug}', Show::class)->name('show');
+});
