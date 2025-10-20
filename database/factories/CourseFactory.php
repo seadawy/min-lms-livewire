@@ -19,7 +19,7 @@ class CourseFactory extends Factory
      */
     public function definition(): array
     {
-        $title = fake()->sentence();
+        $title = fake()->words(4, true);
 
         return [
             'title' => $title,

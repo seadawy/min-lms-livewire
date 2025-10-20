@@ -167,3 +167,10 @@
     --shadow-xl: var(--shadow-xl);
     --shadow-2xl: var(--shadow-2xl);
 }
+
+.pointed_background {
+    background-image: url('/assets/authbackground.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+}

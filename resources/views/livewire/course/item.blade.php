@@ -1,14 +1,14 @@
 <div>
 <x-card>
     <x-card.content class="p-2">
-        <div class="p-2 space-y-2">
+        <div class="p-2">
             <img
                 src="{{ $course->image }}"
                 alt="{{ $course->title }}"
                 class="w-full max-h-72 rounded-lg"
             />
-            <h1>{{ $course->title }}</h1>
-            <h1>{{ $course->level->title }}</h1>
+            <h1 class="text-lg">{{ $course->title }}</h1>
+            <x-badge variant="outline">{{ $course->level->title }}</x-badge>
         </div>
     </x-card.content>
     <x-card.footer class="p-2">
