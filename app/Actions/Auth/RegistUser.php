@@ -2,6 +2,7 @@
 
 namespace App\Actions\Auth;
 
+use App\Jobs\SendWelcomeEmail;
 use App\Models\User;
 use Auth;
 use DB;
@@ -22,6 +23,7 @@ final class RegistUser
             Auth::login($user);
 
             session()->regenerate();
+            SendWelcomeEmail::dispatch($user);
 
             return redirect('/dashboard');
         });
