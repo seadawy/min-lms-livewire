@@ -15,9 +15,6 @@
                         class="appearance-none relative block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-gray-500 focus:border-gray-500 focus:z-10 sm:text-sm"
                         placeholder="Full name"
                     />
-                    @error('name')
-                        <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
-                    @enderror
                 </div>
                 <div>
                     <x-form.input
@@ -29,9 +26,6 @@
                         class="appearance-none relative block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-gray-500 focus:border-gray-500 focus:z-10 sm:text-sm"
                         placeholder="Email address"
                     />
-                    @error('email')
-                        <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
-                    @enderror
                 </div>
                 <div>
                     <x-form.input
@@ -43,9 +37,6 @@
                         class="appearance-none relative block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-gray-500 focus:border-gray-500 focus:z-10 sm:text-sm"
                         placeholder="Password"
                     />
-                    @error('password')
-                        <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
-                    @enderror
                 </div>
                 <div>
                     <x-form.input
@@ -57,9 +48,6 @@
                         class="appearance-none relative block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-gray-500 focus:border-gray-500 focus:z-10 sm:text-sm"
                         placeholder="Confirm password"
                     />
-                    @error('password_confirmation')
-                        <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
-                    @enderror
                 </div>
             </div>
 
