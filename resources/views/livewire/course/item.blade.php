@@ -14,7 +14,7 @@
     <x-card.footer class="p-2">
         <x-link
             wire:navigate
-            herf="{{ route('course.show', $course->slug) }}"
+            href="{{ route('course.show', $course->slug) }}"
             class="w-full text-center bg-primary rounded no-underline text-white py-1 hover:bg-primary/90"
         >
             View details

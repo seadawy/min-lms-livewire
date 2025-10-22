@@ -1,6 +1,6 @@
 <?php
 
-use App\Livewire\Course\Show;
+use App\Livewire\Pages\Course\Show;
 use App\Livewire\Pages\Login;
 use App\Livewire\Pages\Register;
 use App\Livewire\Pages\Welcome;
@@ -12,6 +12,7 @@ Route::middleware(['guest'])->group(function () {
     Route::get('/login', Login::class)->name('login');
     Route::get('/register', Register::class)->name('register');
 });
+
 Route::middleware(['auth'])->group(function () {
     Route::post('/logout', function () {
         Auth::logout();
