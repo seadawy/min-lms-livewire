@@ -1,4 +1,5 @@
 <div>
+    <livewire:lessons.preview-video />
     <div class="bg-indigo-50 w-full flex justify-between p-5">
         <div class="w-1/2 space-y-4 flex flex-col justify-around">
             <div>
