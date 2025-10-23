@@ -1,6 +1,7 @@
 <?php
 
-use App\Livewire\Pages\Course\Show;
+use App\Livewire\Pages\Course\Show as CourseShow;
+use App\Livewire\Pages\Lesson\Show as LessonShow;
 use App\Livewire\Pages\Login;
 use App\Livewire\Pages\Register;
 use App\Livewire\Pages\Welcome;
@@ -21,6 +22,9 @@ Route::middleware(['auth'])->group(function () {
     });
 });
 
-Route::prefix('course')->name('course.')->group(function () {
-    Route::get('{slug}', Show::class)->name('show');
+Route::prefix('courses')->name('course.')->group(function () {
+    Route::get('{slug}', CourseShow::class)->name('show');
+    Route::prefix('/{slug}/lessons/{lessonOrder?}')->name('lesson.')->group(function () {
+        Route::get('/', LessonShow::class)->name('show');
+    });
 });

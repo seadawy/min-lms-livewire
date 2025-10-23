@@ -1,5 +1,5 @@
 <div>
-    <livewire:lessons.preview-video />
+    <livewire:course.preview-video />
     <div class="bg-indigo-50 w-full flex justify-between p-5">
         <div class="w-1/2 space-y-4 flex flex-col justify-around">
             <div>
@@ -16,12 +16,22 @@
                 </div>
             </p>
             <div class="flex justify-end">
-                <x-button
-                wire:click="enroll"
-                class="p-6 max-w-72 text-2xl bg-indigo-950 hover:bg-indigo-900 text-white"
+            @if($enrolled)
+                <x-link
+                    class="p-6 h-9 px-4 w-52 text-2xl bg-indigo-950 hover:bg-indigo-900 text-white rounded-md no-underline inline-flex items-center justify-center whitespace-nowrap font-medium"
+                    href="{{ route('course.lesson.show', [$course->slug, 1]) }}"
+                    wire:navigate
                 >
-                Enroll Now
-            </x-button>
+                    Continue
+                </x-link>
+            @else
+                <x-button
+                    wire:click="enroll"
+                    class="p-6 w-52 text-2xl bg-indigo-950 hover:bg-indigo-900 text-white"
+                >
+                    Enroll Now
+                </x-button>
+            @endif
         </div>
         </div>
         <div class="w-1/2">
@@ -40,7 +50,7 @@
         </h1>
         <x-card>
             <x-card.content>
-                <livewire:lessons.listview :lessons="$course->lessons" />
+                <livewire:course.lessons-list :lessons="$course->lessons" />
             </x-card.content>
         </x-card>
     </div>

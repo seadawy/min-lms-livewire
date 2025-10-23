@@ -18,7 +18,7 @@ class LessonFactory extends Factory
     {
         return [
             'title' => fake()->words(4, true),
-            'video_url' => 'https://youtube.com/shorts/k-LD7EPwdlA?si=OX1opr6dWFuguvq8',
+            'video_url' => 'https://youtu.be/Y3od1i_W3VE?si=YjHUrA_rbbRQy6Ux',
             'order' => fake()->numberBetween(1, 10),
             'duration_seconds' => fake()->numberBetween(60, 120),
             'is_free_preview' => fake()->boolean(),

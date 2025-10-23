@@ -14,9 +14,15 @@ class CourseSeeder extends Seeder
     public function run(): void
     {
         Course::factory()->count(10)->create()->each(function ($course) {
-            $course->lessons()->saveMany(Lesson::factory()->count(5)->create(
-                ['course_id' => $course->id]
-            ));
+            $lessons = Lesson::factory()->count(5)->make([
+                'course_id' => $course->id,
+            ]);
+
+            foreach ($lessons as $index => $lesson) {
+                $lesson->order = $index + 1;
+            }
+
+            $course->lessons()->saveMany($lessons);
         });
     }
 }

@@ -5,11 +5,14 @@ namespace App\Livewire\Pages\Course;
 use App\Actions\Course\EnrollCourse;
 use App\Models\Course;
 use Livewire\Component;
+use Log;
 use Redirect;
 
 class Show extends Component
 {
     public Course $course;
+
+    public $enrolled = false;
 
     public function enroll(EnrollCourse $action)
     {
@@ -18,7 +21,12 @@ class Show extends Component
 
             return redirect()->route('login');
         } else {
-            $action->handel($this->course, auth()->user()->id);
+            try {
+                $action->handel($this->course, auth()->user()->id);
+                $this->enrolled = true;
+            } catch (\Throwable $th) {
+                Log::error($th);
+            }
         }
     }
 
@@ -32,6 +40,9 @@ class Show extends Component
             'user',
         ]
         )->where('slug', $slug)->first();
+        if (! auth()->guest()) {
+            $this->enrolled = auth()->user()->courses()->where('course_id', $this->course->id)->exists();
+        }
     }
 
     public function render()

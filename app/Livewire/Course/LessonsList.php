@@ -4,7 +4,7 @@ namespace App\Livewire\Lessons;
 
 use Livewire\Component;
 
-class Listview extends Component
+class LessonsList extends Component
 {
     public $lessons;
 
@@ -15,6 +15,6 @@ class Listview extends Component
 
     public function render()
     {
-        return view('livewire.lessons.listview');
+        return view('livewire.course.lessons-list');
     }
 }
